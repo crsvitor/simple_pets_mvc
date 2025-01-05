@@ -57,10 +57,10 @@ class MockConnectionException:
     def __exit__(self, exc_type, exc_val, exc_tb): pass
 
 
-def test_insert_people():
+def test_insert_person():
     mock_connection = MockConnection()
     repo = PeopleRepository(mock_connection)
-    repo.insert_people(
+    repo.insert_person(
         first_name='Jane',
         last_name='Doe',
         age='32',
@@ -70,12 +70,12 @@ def test_insert_people():
     mock_connection.session.add.assert_called_once()
     mock_connection.session.commit.assert_called_once()
 
-def test_insert_people_error():
+def test_insert_person_error():
     mock_connection = MockConnectionException()
     repo = PeopleRepository(mock_connection)
 
     with pytest.raises(Exception):
-        repo.insert_people(
+        repo.insert_person(
             first_name='Jane',
             last_name='Doe',
             age=32,

@@ -7,7 +7,7 @@ class PeopleRepository(PeopleRepositoryInterface):
     def __init__(self, db_connection) -> None:
         self.__db_connection = db_connection
 
-    def insert_people(
+    def insert_person(
             self,
             first_name: str,
             last_name: str,
