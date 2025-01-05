@@ -1,7 +1,7 @@
 from sqlalchemy import Column, String, BIGINT, ForeignKey
 from src.models.sqlite.settings.base import Base
 
-class PetsTable(Base):
+class PeopleTable(Base):
     __tablename__ = 'people'
 
     id = Column(BIGINT, primary_key=True)
