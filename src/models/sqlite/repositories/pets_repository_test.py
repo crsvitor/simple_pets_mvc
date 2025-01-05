@@ -34,4 +34,10 @@ def test_list_pets():
 
 
 def test_delete_pets():
-    pass
+    mock_connection = MockConnection()
+    repo = PetsRepository(mock_connection)
+    repo.delete_pets('pet name')
+
+    mock_connection.session.query.assert_called_once_with(PetsTable)
+    mock_connection.session.filter.assert_called_once_with(PetsTable.name == 'pet name')
+    mock_connection.session.delete.assert_called_once()
