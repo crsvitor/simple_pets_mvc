@@ -1,7 +1,6 @@
 {
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
-    "python.linting.mypyEnabled": true,
     "files.exclude": {
         "**/*.pyc": true,
         "**/__pycache__": true,
