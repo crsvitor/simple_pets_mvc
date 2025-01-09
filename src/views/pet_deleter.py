@@ -7,7 +7,7 @@ class PetDeleterView(ViewInterface):
     def __init__(self, controller: PetDeleterControllerInterface) -> None:
         self.__controller = controller
 
-    def handle(self, http_request: HttpRequest) -> HttpRequest:
+    def handle(self, http_request: HttpRequest) -> HttpResponse:
         name = http_request.param['name']
         self.__controller.delete(name)
 

@@ -7,7 +7,7 @@ class PersonCreatorView(ViewInterface):
     def __init__(self, controller: PersonCreatorControllerInterface) -> None:
         self.__controller = controller
 
-    def handle(self, http_request: HttpRequest) -> HttpRequest:
+    def handle(self, http_request: HttpRequest) -> HttpResponse:
         person_info = http_request.body
         body_response = self.__controller.create(person_info)
 
